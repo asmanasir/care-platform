@@ -1,4 +1,6 @@
+using Capacity.Application.Commands.CreateBed;
 using Capacity.Application.Commands.OccupyBed;
+using Capacity.Application.Commands.ReleaseBed;
 using Capacity.Application.Interfaces;
 using Capacity.Infrastructure.Persistence;
 using Capacity.Infrastructure.Repositories;
@@ -27,6 +29,8 @@ builder.Services.AddScoped<IBedRepository, BedRepository>();
 
 // Application handlers
 builder.Services.AddScoped<OccupyBedCommandHandler>();
+builder.Services.AddScoped<CreateBedCommandHandler>();
+builder.Services.AddScoped<ReleaseBedCommandHandler>();
 
 var app = builder.Build();
 

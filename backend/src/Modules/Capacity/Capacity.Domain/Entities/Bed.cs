@@ -1,17 +1,16 @@
-﻿using Capacity.Domain.Enums;
+﻿using CarePlatform.BuildingBlocks.Domain;
+using Capacity.Domain.Enums;
 
 namespace Capacity.Domain.Entities;
 
-public class Bed
+public class Bed : Entity
 {
-    public Guid Id { get; private set; }
     public BedStatus Status { get; private set; }
 
-    private Bed() { } // Required by ORM
+    private Bed() { } // For EF Core
 
-    public Bed(Guid id)
+    public Bed(Guid id) : base(id)
     {
-        Id = id;
         Status = BedStatus.Available;
     }
 
